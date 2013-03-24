@@ -1,0 +1,415 @@
+<!--
+	© 2013, Stanislav Saranchin
+
+	@stsaranchin
+	stanislavdrew@gmail.com
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>The New HTML Harlem Shake</title>
+
+<script type="text/javascript" src="jquery.js"></script>
+
+<style type="text/css">
+	/* Animations */
+
+	@keyframes animation-guy {
+		from { margin-left: -15px; }
+		50% { margin-left: 15px; }
+		to { margin-left: -15px; }
+	}
+
+	@-webkit-keyframes animation-guy {
+		from { margin-left: -15px; }
+		50% { margin-left: 15px; }
+		to { margin-left: -15px; }
+	}
+
+	@keyframes animation-0 {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(360deg); }
+	}
+
+	@-webkit-keyframes animation-0 {
+		from { -webkit-transform: rotate(0deg); }
+		to { -webkit-transform: rotate(360deg); }
+	}
+
+	@keyframes animation-1 {
+		from { margin-left: 0; }
+		50% { margin-left: -200px; }
+		to { margin-left: 0;}
+	}
+
+	@-webkit-keyframes animation-1 {
+		from { margin-left: 0; }
+		50% { margin-left: -200px; }
+		to { margin-left: 0;}
+	}
+
+	@keyframes animation-2 {
+		from { transform: rotate(0deg); }
+		to { transform: rotate(-360deg); }		
+	}
+
+	@-webkit-keyframes animation-2 {
+		from { -webkit-transform: rotate(0deg); }
+		to { -webkit-transform: rotate(-360deg); }		
+	}
+
+	@keyframes animation-3 {
+		from { margin-left: 0; }
+		50% { margin-left: 200px; }
+		to { margin-left: 0;}	
+	}
+
+	@-webkit-keyframes animation-3 {
+		from { margin-left: 0; }
+		50% { margin-left: 200px; }
+		to { margin-left: 0;}	
+	}
+
+	@keyframes animation-4 {
+		from { margin-top: 0; }
+		50% { margin-top: 200px; }
+		to { margin-top: 0;}		
+	}
+
+	@-webkit-keyframes animation-4 {
+		from { margin-top: 0; }
+		50% { margin-top: 200px; }
+		to { margin-top: 0;}		
+	}
+
+	@keyframes animation-5 {
+		from { margin-top: 0; }
+		50% { margin-top: -200px; }
+		to { margin-top: 0;}		
+	}
+
+	@-webkit-keyframes animation-5 {
+		from { margin-top: 0; }
+		50% { margin-top: -200px; }
+		to { margin-top: 0;}		
+	}
+
+	@keyframes animation-6 {
+		from { font-size: 0; }
+		50% { font-size: 96px; }
+		to { font-size: 0;}
+	}
+
+	@-webkit-keyframes animation-6 {
+		from { font-size: 0; }
+		50% { font-size: 96px; }
+		to { font-size: 0;}
+	}
+
+	@keyframes animation-7 {
+		from { opacity: 1; }
+		50% { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@-webkit-keyframes animation-7 {
+		from { opacity: 1; }
+		50% { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@keyframes animation-8 {
+		/* No animation */
+	}
+
+	@-webkit-keyframes animation-8 {
+		/* No animation */
+	}
+
+	@keyframes animation-9 {
+		from { color: #ffc; }
+		66% { color: #cff; }
+		33% { color: #fcf; }
+		to { color: #ffc; }
+	}
+
+	@-webkit-keyframes animation-9 {
+		from { color: #ffc; }
+		66% { color: #cff; }
+		33% { color: #fcf; }
+		to { color: #ffc; }
+	}
+
+	@keyframes animation-10 {
+		from { background-color: #ffc; color: #000; }
+		66% { background-color: #cff; color: #000; }
+		33% { background-color: #fcf; color: #000; }
+		to { background-color: #ffc; color: #000; }
+	}
+
+	@-webkit-keyframes animation-10 {
+		from { background-color: #ffc; color: #000; }
+		66% { background-color: #cff; color: #000; }
+		33% { background-color: #fcf; color: #000; }
+		to { background-color: #ffc; color: #000; }
+	}
+
+	@keyframes animation-11 {
+		from { letter-spacing: 0; }
+		75% { letter-spacing: 25px; }
+		50% { letter-spacing: 0; }
+		25% { letter-spacing: -25px; }
+		to { letter-spacing: 0; }
+	}
+
+	@-webkit-keyframes animation-11 {
+		from { letter-spacing: 0; }
+		75% { letter-spacing: 25px; }
+		50% { letter-spacing: 0; }
+		25% { letter-spacing: -25px; }
+		to { letter-spacing: 0; }
+	}
+
+	@keyframes animation-12 {
+		from { font-weight: 0; }
+		50% { font-weight: 1200; }
+		to { font-weight: 0; }
+	}
+
+	@-webkit-keyframes animation-12 {
+		from { font-weight: 0; }
+		50% { font-weight: 1200; }
+		to { font-weight: 0; }
+	}
+</style>
+
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		background-color: #333;
+		color: #ffc;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 16px;
+	}
+
+	h1 {
+		font-size: 48px;
+		letter-spacing: -4px;
+	}
+
+	h2 {
+		font-size: 96px;
+		font-style: italic;
+		font-family: Georgia, "Times New Roman", serif;
+		display: block;
+		left:  0;
+		top: 0;
+		text-align: center;
+		width: 100%;
+		position: fixed;
+		color: #fff;
+		background-color: #000;
+	}
+
+	button {
+		padding: 5px 15px;
+	}
+
+	#intro, #con-los-terroristas, #then-do-harlem-shake {
+		margin: 1em;
+		width: 50%;
+		margin-left: 16.67%;
+	}
+
+	p, pre {
+		margin: 2em 0;
+		padding: 2em 0;
+	}
+
+	pre {
+		font-family: Consolas, Lucida Console, Courier New;
+	}
+
+	span {
+		display: block;
+		position: relative;
+	}
+
+	#one-guy {
+		animation-name: animation-guy;
+		-webkit-animation-name: animation-guy;
+
+		animation-duration: 0.5s;
+		-webkit-animation-duration: 0.5s;
+
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+	}
+
+	.otherguy {
+		position: fixed;
+	}
+
+	button {
+		font-size: 96px;
+		border-radius: 50px;
+		border: thick solid #fff;
+		padding: 14px 88px;
+		background-color: #fff;
+		margin: 0 auto;
+	}
+
+	button:hover, button:focus {
+		border-color: #cf0;
+		color: #000;
+		background-color: #cf0;
+		cursor: pointer;
+	}
+
+	a {
+		color: #0cf;
+		text-decoration: underline;
+	}
+
+	.center {
+		text-align: center;
+	}
+</style>
+
+</head>
+<body>
+
+<div id="intro">
+	<h1>The New HTML Harlem Shake</h1>
+
+	<p class="center"><button id="do-harlem-shake">Play</button></p>
+
+	<audio id="audio" preload="auto">
+		<source src="harlem-shake.ogg" type="audio/ogg">
+		<source src="harlem-shake.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+
+	<p>&ldquo;Harlem Shake&rdquo; by Baauer
+	<br />
+	<br />Thanks to <a href="http://twitter.com/POPSul">@POPSul</a> for CSS Animations advice
+	<hr width="16.67%" />
+	<br />&copy; 2013, Stanislav Saranchin
+	<br />
+	<br /><a href="http://twitter.com/stsaranchin">@stsaranchin</a>
+	<br /><a href="mailto:stanislavdrew@gmail.com">stanislavdrew@gmail.com</a>
+	<br /><a href="http://drew.snc.ru/">drew.snc.ru</a>
+	</p>
+</div>
+
+<div id="con-los-terroristas">
+	<h2>Con los terroristas!</h2>
+
+	<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;The New HTML Harlem Shake&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+		<span id="one-guy">&lt;span id=&quot;one-guy&quot;&gt;&lt;/span&gt;</span>
+&lt;!--
+	Now playing: &ldquo;Harlem Shake&rdquo; by Baauer
+--&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<div id="then-do-harlem-shake">
+	<h2>Then do &ldquo;Harlem Shake&rdquo;</h2>
+
+	<pre id="harlem-shake"></pre>
+</div>
+
+<script type="text/javascript">
+var audio = document.getElementById('audio');
+
+var intro = $('#intro');
+var conlos = $('#con-los-terroristas');
+var thendo = $('#then-do-harlem-shake');
+var oneguy = $('#one-guy');
+var harlemshake = $('#harlem-shake');
+var doharlemshake = $('#do-harlem-shake');
+
+var htmltags = ['b', 'i', 's', 'u', 'a', 'div', 'span', 'table', 'caption', 'thead', 'tbody', 'legend', 'tr', 'td', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'html', 'body', 'link', 'hr', 'br', 'style', 'script', 'pre', 'input', 'textarea', 'p', 'ul', 'li', 'ol', 'dt', 'dd', 'dl', 'meta', 'marquee'];
+
+for (var i = 0; i < 100 + Math.floor(Math.random() * 50); i++) {
+	var innerTag = htmltags[Math.floor(Math.random() * htmltags.length)];
+
+	$el = $('<span>').addClass('otherguy').text('<' + innerTag + '>');
+	$el.offset({
+		'left': Math.floor(Math.random() * $(window).width()),
+		'top': Math.floor(Math.random() * $(window).height())
+	});
+
+	$('#harlem-shake').append($el);
+}
+
+doharlemshake.hide();
+conlos.hide();
+thendo.hide();
+harlemshake.hide();
+
+intro.fadeIn('slow');
+
+audio.addEventListener('canplaythrough', doharlemshake.show(), false);
+
+$('#do-harlem-shake').click(function() {
+	audio.play();
+
+	intro.fadeOut('slow');
+
+	conlos.show(function() {
+		$('#con-los-terroristas h2').fadeOut(3 * 1000);
+
+		oneguy.css('animation-name', 'animation-guy');
+		oneguy.css('-webkit-animation-name', 'animation-guy');
+	});
+
+	conlos.delay(13 * 1000);
+
+	conlos.fadeOut(1000, function() {
+		thendo.show();
+
+		$('#then-do-harlem-shake h2').fadeOut(1000, function() {
+			harlemshake.fadeIn();
+
+			$('span.otherguy').each(function() {
+				var rndTime = 2 + Math.floor(Math.random() * 10);
+				var rndAnimation = Math.floor(Math.random() * 13);
+
+				$el = $(this);
+
+				$el.css('animation-name', 'animation-' + rndAnimation);
+				$el.css('animation-duration', rndTime + 's');
+				$el.css('animation-iteration-count', 'infinite');
+
+				$el.css('-webkit-animation-name', 'animation-' + rndAnimation);
+				$el.css('-webkit-animation-duration', rndTime + 's');
+				$el.css('-webkit-animation-iteration-count', 'infinite');
+			});
+		});
+
+		setTimeout(function() {
+    			thendo.fadeOut(1000);
+		}, 14 * 1000);
+	});
+});
+
+</script>
+
+</body>
+</html>
+<!-- With love to trin. -->
